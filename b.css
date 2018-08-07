@@ -1,0 +1,31 @@
+.q {
+    width:200px;
+    height:200px;
+    position: relative;
+  }
+  .q::before,.q::after {
+    content:'';
+    position: absolute;
+    width: 0px;
+    height: 0px;
+    border-radius:50%;
+    background: black;
+    top:0;
+    left:0;
+    bottom:0;
+    right:0;
+    margin:auto;
+    animation: myfirst 1.5s linear infinite;
+  }
+  .q::after {
+    animation-delay:0.75s;
+  }
+  @keyframes myfirst{
+  0%{
+    width:0px;height:0px;opacity:1;
+  }
+  100%{
+    width:150px;height:150px;opacity:0;
+  }
+  }
+  
