@@ -45,13 +45,13 @@
       <nav class="menu" style="float: right;">
         <ul class="clearfix">
           <li>
-            <a href="#">关于</a>
+            <a href="#siteAbout">关于</a>
           </li>
           <li>
-            <a href="#">技能</a>
+            <a href="#siteSkill">技能</a>
           </li>
           <li>
-            <a  href="#">作品</a>
+            <a  href="#siteWork">作品</a>
             <ul class="submenu">
               <li>作品1</li>
               <li>作品2</li>
@@ -82,8 +82,8 @@
   <div class="banner">
     <div class="mask"></div>
   </div>
-  <main style="">
-    <div class="userCard">
+  <main>
+    <div id="siteAbout" class="userCard">
       <div class="pictureAndText clearfix">
         <div class="picture">
           <img src="./img/avatar.jpg" width=299 height=347 alt="头像">
@@ -148,7 +148,7 @@
     </p>
 
   </main>
-  <section class="skills">
+  <section id="siteSkill" class="skills">
     <h2>技能</h2>
     <ol class="clearfix">
       <li>
@@ -201,7 +201,7 @@
       </li>
     </ol>
   </section>
-  <section class="portfolio">
+  <section id="siteWork" class="portfolio">
     <h2>作品集</h2>
     <nav>
       <ol class="clearfix">
@@ -259,6 +259,19 @@
        liTags[i].onmouseleave = function(x){
      x.currentTarget.classList.remove('active')
        }
+     }
+
+     let aTags = document.querySelectorAll('nav.menu > li > a')  //从这里获取了所有的
+     for(let i = 1 ; i<aTags.length; i++){
+      aTags[i].onclick = function(x){
+        x.preventDefault()
+        let a = x.currentTarget
+        let href = a.getAttribute('href')
+        let element = document.querySelector(href)
+        let rect = element.getBoundingClientRect()
+        let top = element.offsetTop
+        window.scrollTo(0, top - 100)
+      }
      }
   </script>
 </body>

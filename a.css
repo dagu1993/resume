@@ -49,10 +49,10 @@ h1,h2,h3,h4,h5,h6{font-weight: normal;}
 }
 @keyframes submenuSlide{
   0%{
-    transform: translateY(50px)
+    transform: translateX(-50px)
   }
   100%{
-    transform: translateY((0))
+    transform: translateX(0)
   }
 }
 .topNavBar .submenu > li{
